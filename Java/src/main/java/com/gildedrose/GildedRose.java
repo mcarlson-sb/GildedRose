@@ -59,4 +59,14 @@ class GildedRose {
             }
         }
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        for (int index = 0; index < items.length; index++) {
+            sb.append("[" + items[index].name + ", " + items[index].sellIn + ", " + items[index].quality + "]");
+        }
+        return sb.toString();
+    }
 }
