@@ -14,11 +14,11 @@ class GildedRose {
     }
 
     private void updateItem(Item item) {
-        if (item.name.equals("Aged Brie")) {
+        if (item.name.equals("Sulfuras, Hand of Ragnaros")) {
+        } else if (item.name.equals("Aged Brie")) {
             updateAgedBrie(item);
         } else if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
             updateBackstagePass(item);
-        } else if (item.name.equals("Sulfuras, Hand of Ragnaros")) {
         } else {
             updateDefaultItem(item);
         }
