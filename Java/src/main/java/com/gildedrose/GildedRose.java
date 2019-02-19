@@ -20,6 +20,7 @@ class GildedRose {
             return;
         } else if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
             updateBackstagePass(item);
+            return;
         } else {
             updateDefaultItem(item);
         }
@@ -67,6 +68,10 @@ class GildedRose {
             }
         }
         item.sellIn = item.sellIn - 1;
+
+        if (item.sellIn < 0) {
+            item.quality = item.quality - item.quality;
+        }
     }
 
     private void updateAgedBrie(Item item) {
