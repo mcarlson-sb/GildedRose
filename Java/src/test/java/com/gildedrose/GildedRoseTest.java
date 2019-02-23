@@ -48,7 +48,7 @@ public class GildedRoseTest {
         Integer[] qualities = Range.get( -1, 100);
         CombinationApprovals.verifyAllCombinations(this::checkItem, items, sellins, qualities);
     }
-
+    
     public GildedRose checkItem(String item, Integer sellin, Integer quality) {
         Item[] items = new Item[] { new Item(item, sellin, quality) };
         GildedRose app = new GildedRose(items);
