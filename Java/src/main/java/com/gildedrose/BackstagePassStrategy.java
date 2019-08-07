@@ -1,26 +1,24 @@
 package com.gildedrose;
 
 public class BackstagePassStrategy extends ItemStrategy {
-    public void update(Item item) {
-        if (item.quality < 50) {
-            item.quality = item.quality + 1;
 
-            if (item.sellIn < 11) {
-                if (item.quality < 50) {
-                    item.quality = item.quality + 1;
-                }
-            }
+	@Override
+	protected void updateQuality(Item item) {
+		increaseQuality(item);
 
-            if (item.sellIn < 6) {
-                if (item.quality < 50) {
-                    item.quality = item.quality + 1;
-                }
-            }
-        }
-        item.sellIn = item.sellIn - 1;
+		if (item.sellIn < 11) {
+			increaseQuality(item);
+		}
 
-        if (item.sellIn < 0) {
-            item.quality = 0;
-        }
-    }
+		if (item.sellIn < 6) {
+			increaseQuality(item);
+		}
+	}
+
+	@Override
+	protected void updateQualityAfterExpiry(Item item) {
+		if (item.sellIn < 0) {
+			item.quality = 0;
+		}
+	}
 }
