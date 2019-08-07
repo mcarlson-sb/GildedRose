@@ -31,7 +31,7 @@ public abstract class ItemStrategy {
 
 	protected void increaseQuality(Item item) {
 		if (item.quality < 50) {
-			item.quality = item.quality + 1;
+			item.quality++;
 		}
 	}
 }
